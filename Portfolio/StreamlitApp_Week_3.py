@@ -143,7 +143,17 @@ if submitted:
     data_row = [user_inputs[k] for k in MODEL_INFO["keys"]]
     # Prepare data
     base_df = df_features
-    input_df = pd.concat([base_df, pd.DataFrame([data_row], columns=base_df.columns)])
+    FEATURE_COLS = [
+    "EOQ_Close",
+    "High_Low_Diff",
+    "Open_Close_Diff",
+    "Open_Close_Pct",
+    "Proj_Next_Q_Growth"
+]
+
+input_df = pd.DataFrame([data_row], columns=FEATURE_COLS)
+
+prediction = model.predict(input_df)[0]
     
     res, status = call_model_api(input_df)
     if status == 200:
@@ -151,6 +161,7 @@ if submitted:
         display_explanation(input_df,session, aws_bucket)
     else:
         st.error(res)
+
 
 
 
