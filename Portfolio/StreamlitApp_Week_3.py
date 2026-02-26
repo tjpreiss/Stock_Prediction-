@@ -143,7 +143,7 @@ if submitted:
     data_row = [user_inputs[k] for k in MODEL_INFO["keys"]]
     # Prepare data
     base_df = df_features
-    FEATURE_COLS = [
+feature_cols = [
     "EOQ_Close",
     "High_Low_Diff",
     "Open_Close_Diff",
@@ -161,6 +161,7 @@ prediction = model.predict(input_df)[0]
         display_explanation(input_df,session, aws_bucket)
     else:
         st.error(res)
+
 
 
 
