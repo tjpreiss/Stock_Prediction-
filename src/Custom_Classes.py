@@ -214,4 +214,4 @@ class PairFeatureEngineer(BaseEstimator, TransformerMixin):
 # --- Usage Example ---
 # extractor = PairFeatureExtractor(window=60)
 
-# features_df = extractor.transform(data['AAPL'], data['MSFT'])
+# features_df = extractor.transform(data['AAPL'], data['AMZN'])
