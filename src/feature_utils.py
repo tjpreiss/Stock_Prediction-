@@ -18,7 +18,7 @@ def extract_features():
     
     START_DATE = (datetime.date.today() - datetime.timedelta(days=365)).strftime("%Y-%m-%d")
     END_DATE = datetime.date.today().strftime("%Y-%m-%d")
-    stk_tickers = ['MSFT', 'IBM', 'GOOGL']
+    stk_tickers = ['AMZN']
     ccy_tickers = ['DEXJPUS', 'DEXUSUK']
     idx_tickers = ['SP500', 'DJIA', 'VIXCLS']
     
